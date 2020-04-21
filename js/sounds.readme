@@ -1,0 +1,10 @@
+How to fix errors:
+
+NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+Solution: Browser does not allow for autoplay of audio/video. To fix this, simply change the browser's permission.
+ - For FireFox:
+     1. Click the menu button and select 'Preferences'.
+     2. Click on the panel labeled 'Privacy & Security'.
+     3. Find the 'Permission' section.
+     4. Look for 'AutoPlay', and click on 'Settings...'.
+     5. There click drop-down menu next to 'Default for all websites:' and select 'Allow Audio and Video'.
