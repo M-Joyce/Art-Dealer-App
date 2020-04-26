@@ -328,6 +328,49 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 return returnCards;
             break;
             }
+        case 6:
+            // High cards
+            console.log(cardChoices);
+            returnCards = []
+            for (let i = 0; i < cardChoices.length; i++ ){
+                if (cardChoices[i].number > 9 || cardChoices[i].number == 1){
+                    returnCards.push(cardChoices[i])
+                }
+            }
+            if (returnCards.length == 0)
+                return null;
+            else
+                return returnCards;
+            break;
+        case 7:
+            // Palindrome
+            console.log(cardChoices);
+            returnCards = []
+            // Check first and last card
+            if (cardChoices[0].number == cardChoices[3].number) {
+                returnCards.push(cardChoices[0])
+                returnCards.push(cardChoices[3])
+            }
+            // Check two middle cards
+            if (cardChoices[1].number == cardChoices[2].number) {
+                returnCards.push(cardChoices[1])
+                returnCards.push(cardChoices[2])
+            }
+            if (returnCards.length == 0)
+                return null;
+            else
+                return returnCards;
+            break;
+        case 8:
+            // Checker
+            console.log(cardChoices);
+            returnCards = []
+
+            if (returnCards.length == 0)
+                return null;
+            else
+                return returnCards;
+            break
         default:
             console.log('cards.js: Invalid pattern number.');
             console.log(patternNumber)
@@ -335,5 +378,5 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
     
 }
 
-returnedCards = matchPatterns(5, [cards[1], cards[4], cards[15], cards[17]])
+returnedCards = matchPatterns(7, [cards[0], cards[1], cards[2], cards[3]])
 console.log(returnedCards);
