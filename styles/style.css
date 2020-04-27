@@ -3,9 +3,8 @@ body {
 }
 
 .centerButtonsOnPage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  width: 50%;
 }
 
 .startGameButtons {
@@ -23,7 +22,7 @@ body {
   color: white; 
   border: 2px solid black;
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   height: 100px;
 }
 
@@ -31,4 +30,3 @@ body {
   background-color: #7f40a3;
   color: white;
 }
-
