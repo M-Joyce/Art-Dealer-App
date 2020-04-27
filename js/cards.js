@@ -331,10 +331,10 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
         case 6:
             // High cards
             console.log(cardChoices);
-            returnCards = []
+            returnCards = [];
             for (let i = 0; i < cardChoices.length; i++ ){
                 if (cardChoices[i].number > 9 || cardChoices[i].number == 1){
-                    returnCards.push(cardChoices[i])
+                    returnCards.push(cardChoices[i]);
                 }
             }
             if (returnCards.length == 0)
@@ -345,16 +345,16 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
         case 7:
             // Palindrome
             console.log(cardChoices);
-            returnCards = []
+            returnCards = [];
             // Check first and last card
             if (cardChoices[0].number == cardChoices[3].number) {
-                returnCards.push(cardChoices[0])
-                returnCards.push(cardChoices[3])
+                returnCards.push(cardChoices[0]);
+                returnCards.push(cardChoices[3]);
             }
             // Check two middle cards
             if (cardChoices[1].number == cardChoices[2].number) {
-                returnCards.push(cardChoices[1])
-                returnCards.push(cardChoices[2])
+                returnCards.push(cardChoices[1]);
+                returnCards.push(cardChoices[2]);
             }
             if (returnCards.length == 0)
                 return null;
@@ -364,7 +364,46 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
         case 8:
             // Checker
             console.log(cardChoices);
-            returnCards = []
+            let returnCards = [];
+
+            let allReturnPossible = [];
+            let index = 0;
+            for (let i = 0; i < cardChoices.length; i++ ){
+                let compareIndex = (i + 2) % cardChoices.length;
+                if (cardChoices[i].color == cardChoices[compareIndex].color) {
+                    console.log('here');
+                    let ajacentIndex = (i + 1) % cardChoices.length;
+                    let ajacentCompareIndex = (ajacentIndex + 2) % cardChoices.length;
+                    allReturnPossible.push([]);
+                    if (cardChoices[ajacentIndex].color == cardChoices[ajacentCompareIndex].color 
+                        && cardChoices[i].color != cardChoices[ajacentIndex].color) {
+                        console.log('Here');
+                        allReturnPossible[index].push(cardChoices[i]);
+                        allReturnPossible[index].push(cardChoices[compareIndex]);
+                        allReturnPossible[index].push(cardChoices[ajacentIndex]);
+                        allReturnPossible[index].push(cardChoices[ajacentCompareIndex]);
+                        break;
+                    }
+                    allReturnPossible[index].push(cardChoices[i]);
+                    allReturnPossible[index].push(cardChoices[compareIndex]);
+                    index++;
+                }
+
+            }
+
+            let mostCardsIndex = 0;
+            let mostCards = 0;
+            if (allReturnPossible != 0) {
+                for (let i = 0; i < allReturnPossible.length; i++ ){
+                    if (allReturnPossible[i].length > mostCards) {
+                        mostCardsIndex = i;
+                        mostCards = allReturnPossible[i].length;
+                    }
+                }
+                for (let i = 0; i < allReturnPossible[mostCardsIndex].length; i++ ){
+                    returnCards.push(allReturnPossible[mostCardsIndex][i]);
+                }
+            }
 
             if (returnCards.length == 0)
                 return null;
@@ -378,5 +417,5 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
     
 }
 
-returnedCards = matchPatterns(7, [cards[0], cards[1], cards[2], cards[3]])
+returnedCards = matchPatterns(0, [cards[0], cards[15], cards[1], cards[14]])
 console.log(returnedCards);
