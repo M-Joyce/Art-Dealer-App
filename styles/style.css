@@ -2,6 +2,12 @@ body {
   background-color: #e7d8f0;  
 }
 
+.centerButtonsOnPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .startGameButtons {
   border: none;
   color: white;
