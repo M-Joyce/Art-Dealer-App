@@ -1,6 +1,35 @@
 body {
   background-color: #e7d8f0;
   font-family: 'Quicksand', sans-serif;
+  margin: 0; height: 100%;
+  overflow: hidden;
+}
+
+.settingsButton {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #ab91ba; 
+  color: white; 
+  border: 2px solid black;
+  width: 100%;
+  height: 50px;
+  
+}
+
+.settingsButton:hover {
+  background-color: #7f40a3;
+  color: white;
+}
+
+.settingsButtonDiv {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .startPageTitle {
