@@ -414,8 +414,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
             console.log('cards.js: Invalid pattern number.');
             console.log(patternNumber)
     }
-    
 }
 
-returnedCards = matchPatterns(0, [cards[0], cards[15], cards[1], cards[14]])
+returnedCards = matchPatterns(0, [cards[9], cards[2], cards[5], cards[7]])
 console.log(returnedCards);
