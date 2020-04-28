@@ -1,6 +1,16 @@
 body {
-  background-color: #e7d8f0;  
+  background-color: #e7d8f0;
+  font-family: 'Quicksand', sans-serif;
 }
+
+.startPageTitle {
+  text-align: center;
+  font-size: 32px;
+  margin: auto;
+  padding: 30px;
+  
+}
+
 
 .centerButtonsOnPage {
   margin: auto;
@@ -8,6 +18,7 @@ body {
 }
 
 .startGameButtons {
+  font-family: 'Quicksand', sans-serif;
   border: none;
   color: white;
   padding: 16px 32px;
