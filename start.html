@@ -130,8 +130,8 @@
             //set rounds as url param
 
             let urlParams = new URLSearchParams(location.search.substr(1));
-            urlParams.set(key, value);
-            location.search = urlParams.toString();
+            urlParams.set("rounds", rounds);
+            window.location.href = "./K-2Game.html" + urlParams.toString();
 
 
           }
