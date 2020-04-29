@@ -79,6 +79,7 @@
 
     </div>
 
+
     <script>
       // Get the modal
       var modal = document.getElementById("settingsModal");
@@ -130,7 +131,7 @@
             //set rounds as url param
 
             let urlParams = new URLSearchParams(location.search.substring(1));
-            urlParams.set("rounds", rounds);          
+            urlParams.set("rounds", rounds);
             window.location = "./K-2Game.html?" + urlParams.toString();
 
 
@@ -176,7 +177,7 @@
             let urlParams = new URLSearchParams(location.search.substring(1));
             urlParams.set("rounds", rounds);
             window.location = "./6-8Game.html?" + urlParams.toString();
-            
+
           }
         } else {
           window.alert("Invalid Password!")
@@ -185,7 +186,9 @@
 
     </script>
 
-
+    <div class="instructionsDiv">
+      <button onclick="location.href='./instructions.html'" class="instructionsButton" type="button">Instructions</button>
+    </div>
 
 
 
