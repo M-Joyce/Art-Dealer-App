@@ -136,6 +136,89 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
             }
         case 3:
             {
+                // Same suits
+                console.log('Pattern: Same Suits');
+                console.log(cardChoices);
+
+                let cardList = [[]]
+                let index = 0;
+                // Return identical suitk
+                for (let i = 0; i < cardChoices.length; i++){
+                    currentCard = cardChoices[i];
+                    for (let j = 0; j < cardChoices.length; j++){
+                        if (i != j){
+                            if (currentCard.suit == cardChoices[j].suit) {
+                                if (cardList[index].length == 0) {
+                                    cardList[index].push(currentCard);
+                                    cardList[index].push(cardChoices[j]);
+                                    currentCard = cardChoices[j];
+                                }
+                                else{
+                                    cardList[index].push(cardChoices[j]);
+                                    currentCard = cardChoices[j];
+                                }
+                            }
+                        }
+                    }
+                    cardList.push([]);
+                    index++;
+                }
+                console.log('matches');
+                console.log(cardList);
+
+                if (cardList.length > 0) {
+                    let max = 0;
+                    let maxIndex = 0;
+                    for (let i = 0; i < cardList.length; i++ ){
+                        if (cardList[i].length > 0) {
+                            max = cardList[i].length;
+                            maxIndex = i;
+                        }
+                    }
+                    if (max == 0)
+                        return null;
+                    else
+                        return cardList[maxIndex]
+                }
+                else
+                    return null;
+            }
+            break;
+        case 4:
+            {
+                // Different suits
+                console.log('Pattern: Different Suits');
+                console.log(cardChoices);
+
+                // Removing duplicates from cardList
+                let nonDuplicates = [];
+                let mark = [];
+                for (let i = 0; i < cardChoices.length; i++){
+                    mark.push(true);
+                }
+                for (let i = 0; i < cardChoices.length; i++){
+                    if (mark[i] == true) {
+                        for (let j = i + 1; j < cardChoices.length; j++){
+                            if (cardChoices[j].suit == cardChoices[i].suit) {
+                                mark[j] = false;
+                            }
+                        }
+                    }
+                }       
+                for (let i = 0; i < cardChoices.length; i++){
+                    if (mark[i] == true) {
+                        nonDuplicates.push(cardChoices[i]);
+                    }
+                }
+                if (nonDuplicates.length > 0)
+                    return nonDuplicates;
+                else
+                    return null;
+                    
+            }
+            break;
+        case 5:
+            {
                 // Check for straight
                 console.log('Pattern: Straight');
                 console.log(cardChoices);
@@ -215,7 +298,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 4:
+        case 6:
             {
                 // Four of a kind
                 console.log('Pattern: Four of a kind');
@@ -276,35 +359,9 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 }
                 else
                     return null;
-
-                // Removing duplicates from cardList
-                //if (cardList.length > 0) {
-                //    nonDuplicates = [];
-                //    mark = [];
-                //    for (let i = 0; i < cardList.length; i++){
-                //        mark.push(true);
-                //    }
-                //    for (let i = 0; i < cardList.length; i++){
-                //        if (mark[i] == true) {
-                //            for (let j = i + 1; j < cardList.length; j++){
-                //                if (cardList[j].index == cardList[i].index) {
-                //                    mark[j] = false;
-                //                }
-                //            }
-                //        }
-                //    }       
-                //    for (let i = 0; i < cardList.length; i++){
-                //        if (mark[i] == true) {
-                //            nonDuplicates.push(cardList[i]);
-                //        }
-                //    }
-                //    return nonDuplicates;
-                //}
-                //else
-                //    return null;
                 break;
             }
-        case 5:
+        case 7:
             {
                 // Two Pairs
                 console.log('Pattern: Two Pairs');
@@ -340,7 +397,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 6:
+        case 8:
             {
                 // Primes
                 console.log('Pattern: Primes');
@@ -360,7 +417,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 console.log('Pattern number is 1');
                 break;
             }
-        case 7:
+        case 9:
             {
                 // Palindrome
                 console.log('Pattern: Palindrome');
@@ -382,7 +439,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 8:
+        case 10:
             {
                 // Checker
                 console.log('Pattern: Checker');
@@ -432,7 +489,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break
             }
-        case 9:
+        case 11:
             {
                 // Sum to a number (given in argument)
                 console.log('Subset sum');
@@ -514,7 +571,7 @@ let totalSum = Math.floor((Math.random() * 20) + 5 );
 let randomPattern = Math.random() * 100 % 10;
 randomPattern = Number(randomPattern.toFixed());
 
-randomPattern = 9;
+randomPattern = 4;
 totalSum = 11;
-returnedCards = matchPatterns(randomPattern, [cards[9], cards[0], cards[6], cards[42]], totalSum)
+returnedCards = matchPatterns(randomPattern, [cards[19], cards[50], cards[6], cards[29]], totalSum)
 console.log(returnedCards);
