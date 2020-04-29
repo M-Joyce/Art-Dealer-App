@@ -28,8 +28,8 @@ body {
 
 .settingsButtonDiv {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 1vh;
+  left: 0.5vw;
 }
 
 .startPageTitle {
@@ -137,8 +137,8 @@ body {
 
 .instructionsDiv {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 1vh;
+  right: 3vw;
 }
 
 
