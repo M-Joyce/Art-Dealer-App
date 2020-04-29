@@ -130,8 +130,7 @@
             //set rounds as url param
 
             let urlParams = new URLSearchParams(location.search.substring(1));
-            urlParams.set("rounds", rounds);
-            window.alert("./K-2Game.html?" + urlParams.toString())
+            urlParams.set("rounds", rounds);          
             window.location = "./K-2Game.html?" + urlParams.toString();
 
 
@@ -155,7 +154,6 @@
 
             let urlParams = new URLSearchParams(location.search.substring(1));
             urlParams.set("rounds", rounds);
-            window.alert("./3-5Game.html?" + urlParams.toString())
             window.location = "./3-5Game.html?" + urlParams.toString();
 
           }
@@ -177,7 +175,6 @@
 
             let urlParams = new URLSearchParams(location.search.substring(1));
             urlParams.set("rounds", rounds);
-            window.alert("./6-8Game.html?" + urlParams.toString())
             window.location = "./6-8Game.html?" + urlParams.toString();
             
           }
