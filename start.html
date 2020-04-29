@@ -70,8 +70,8 @@
           </select>
           <input type="button" value="Submit" onclick="setRoundsOption()" />
         </form>
-        
-       
+
+
 
 
 
@@ -115,7 +115,7 @@
         var select = document.getElementById("roundsSetting");
         rounds = select.options[select.selectedIndex].value;
         document.getElementById("settingsModal").style.display = "none";
-        
+
       }
 
       function getPassK2() {
@@ -126,17 +126,14 @@
           if (rounds == null) {
             window.location.href = "./K-2Game.html";
           } else {
-          
-						//set rounds as url param
-     
-            var url = new URL(window.location+"/K-2Game.html");
-            var search_params = url.searchParams;
-            search_params.append('rounds', rounds);      
-   
-            window.location.href = url;
-            
-            
-            
+
+            //set rounds as url param
+
+            let urlParams = new URLSearchParams(location.search.substr(1));
+            urlParams.set(key, value);
+            location.search = urlParams.toString();
+
+
           }
 
         } else {
@@ -152,13 +149,13 @@
           if (rounds == null) {
             window.location.href = "./3-5Game.html";
           } else {
-          
-						//set rounds as url param
-     
-            var url = new URL(window.location+"/3-5Game.html");
+
+            //set rounds as url param
+
+            var url = new URL(window.location + "/3-5Game.html");
             var search_params = url.searchParams;
-            search_params.append('rounds', rounds);      
-   
+            search_params.append('rounds', rounds);
+
             window.location.href = url;
 
           }
@@ -175,17 +172,17 @@
           if (rounds == null) {
             window.location.href = "./6-8Game.html";
           } else {
-          
-						//set rounds as url param
-     
-            var url = new URL(window.location+"/6-8Game.html");
+
+            //set rounds as url param
+
+            var url = new URL(window.location + "/6-8Game.html");
             var search_params = url.searchParams;
-            search_params.append('rounds', rounds);      
-   
+            search_params.append('rounds', rounds);
+
             window.location.href = url;
-            
-            
-            
+
+
+
           }
         } else {
           window.alert("Invalid Password!")
