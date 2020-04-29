@@ -1,6 +1,45 @@
 body {
-  background-color: #e7d8f0;  
+  background-color: #e7d8f0;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0; height: 100%;
+  overflow: hidden;
 }
+
+.settingsButton {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #ab91ba; 
+  color: white; 
+  border: 2px solid black;
+  width: 120%;
+  height: 70px;
+  
+}
+
+.settingsButton:hover {
+  background-color: #7f40a3;
+  color: white;
+}
+
+.settingsButtonDiv {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.startPageTitle {
+  text-align: center;
+  font-size: 32px;
+  margin: auto;
+  padding: 30px;
+  
+}
+
 
 .centerButtonsOnPage {
   margin: auto;
@@ -8,13 +47,14 @@ body {
 }
 
 .startGameButtons {
+  font-family: 'Quicksand', sans-serif;
   border: none;
   color: white;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -29,4 +69,45 @@ body {
 .startGameButtons:hover {
   background-color: #7f40a3;
   color: white;
+}
+
+
+/* Settings Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Settings modal Content */
+.modal-content {
+  background-color: #e7d8f0;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 80%;
+}
+
+/* Settings Modal Close Button */
+.close {
+  color: gray;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
