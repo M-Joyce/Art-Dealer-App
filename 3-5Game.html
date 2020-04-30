@@ -3,8 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>3-5 Game</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <div class="buyer-table">
+        <img src="blank" alt="choice" id="choice0" onclick="clearCard('choice0')"/>
+        <img src="blank" alt="choice" id="choice1" onclick="clearCard('choice1')"/>
+        <img src="blank" alt="choice" id="choice2" onclick="clearCard('choice2')"/>
+        <img src="blank" alt="choice" id="choice3" onclick="clearCard('choice3')"/>
+        <button onclick="submitSelections()">Submit</button>
+        <button onclick="clearSelections()">Clear</button>
+        <p id="message"></p>
+    </div>
 
+    <div class="seller-table">
+       <img src="pictures/cards/52/card0.jpg"  alt="card0"   id="card0"  onclick="makeSelection('card0')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card1.jpg"  alt="card1"   id="card1"  onclick="makeSelection('card1')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card2.jpg"  alt="card2"   id="card2"  onclick="makeSelection('card2')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card3.jpg"  alt="card3"   id="card3"  onclick="makeSelection('card3')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card4.jpg"  alt="card4"   id="card4"  onclick="makeSelection('card4')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card5.jpg"  alt="card5"   id="card5"  onclick="makeSelection('card5')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card6.jpg"  alt="card6"   id="card6"  onclick="makeSelection('card6')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card7.jpg"  alt="card7"   id="card7"  onclick="makeSelection('card7')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card8.jpg"  alt="card8"   id="card8"  onclick="makeSelection('card8')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card9.jpg"  alt="card9"   id="card9"  onclick="makeSelection('card9')"  style="border: 0px"/>
+       <img src="pictures/cards/52/card10.jpg" alt="card10"  id="card10" onclick="makeSelection('card10')" style="border: 0px"/>
+       <img src="pictures/cards/52/card11.jpg" alt="card11"  id="card11" onclick="makeSelection('card11')" style="border: 0px"/>
+       <img src="pictures/cards/52/card12.jpg" alt="card12"  id="card12" onclick="makeSelection('card12')" style="border: 0px"/>
+       <img src="pictures/cards/52/card13.jpg" alt="card13"  id="card13" onclick="makeSelection('card13')" style="border: 0px"/>
+       <img src="pictures/cards/52/card14.jpg" alt="card14"  id="card14" onclick="makeSelection('card14')" style="border: 0px"/>
+       <img src="pictures/cards/52/card15.jpg" alt="card15"  id="card15" onclick="makeSelection('card15')" style="border: 0px"/>
+       <img src="pictures/cards/52/card16.jpg" alt="card16"  id="card16" onclick="makeSelection('card16')" style="border: 0px"/>
+       <img src="pictures/cards/52/card17.jpg" alt="card17"  id="card17" onclick="makeSelection('card17')" style="border: 0px"/>
+       <img src="pictures/cards/52/card18.jpg" alt="card18"  id="card18" onclick="makeSelection('card18')" style="border: 0px"/>
+       <img src="pictures/cards/52/card19.jpg" alt="card19"  id="card19" onclick="makeSelection('card19')" style="border: 0px"/>
+       <img src="pictures/cards/52/card20.jpg" alt="card20"  id="card20" onclick="makeSelection('card20')" style="border: 0px"/>
+       <img src="pictures/cards/52/card21.jpg" alt="card21"  id="card21" onclick="makeSelection('card21')" style="border: 0px"/>
+       <img src="pictures/cards/52/card22.jpg" alt="card22"  id="card22" onclick="makeSelection('card22')" style="border: 0px"/>
+       <img src="pictures/cards/52/card23.jpg" alt="card23"  id="card23" onclick="makeSelection('card23')" style="border: 0px"/>
+       <img src="pictures/cards/52/card24.jpg" alt="card24"  id="card24" onclick="makeSelection('card24')" style="border: 0px"/>
+       <img src="pictures/cards/52/card25.jpg" alt="card25"  id="card25" onclick="makeSelection('card25')" style="border: 0px"/>
+       <img src="pictures/cards/52/card26.jpg" alt="card26"  id="card26" onclick="makeSelection('card26')" style="border: 0px"/>
+       <img src="pictures/cards/52/card27.jpg" alt="card27"  id="card27" onclick="makeSelection('card27')" style="border: 0px"/>
+       <img src="pictures/cards/52/card28.jpg" alt="card28"  id="card28" onclick="makeSelection('card28')" style="border: 0px"/>
+       <img src="pictures/cards/52/card29.jpg" alt="card29"  id="card29" onclick="makeSelection('card29')" style="border: 0px"/>
+       <img src="pictures/cards/52/card30.jpg" alt="card30"  id="card30" onclick="makeSelection('card30')" style="border: 0px"/>
+       <img src="pictures/cards/52/card31.jpg" alt="card31"  id="card31" onclick="makeSelection('card31')" style="border: 0px"/>
+       <img src="pictures/cards/52/card32.jpg" alt="card32"  id="card32" onclick="makeSelection('card32')" style="border: 0px"/>
+       <img src="pictures/cards/52/card33.jpg" alt="card33"  id="card33" onclick="makeSelection('card33')" style="border: 0px"/>
+       <img src="pictures/cards/52/card34.jpg" alt="card34"  id="card34" onclick="makeSelection('card34')" style="border: 0px"/>
+       <img src="pictures/cards/52/card35.jpg" alt="card35"  id="card35" onclick="makeSelection('card35')" style="border: 0px"/>
+       <img src="pictures/cards/52/card36.jpg" alt="card36"  id="card36" onclick="makeSelection('card36')" style="border: 0px"/>
+       <img src="pictures/cards/52/card37.jpg" alt="card37"  id="card37" onclick="makeSelection('card37')" style="border: 0px"/>
+       <img src="pictures/cards/52/card38.jpg" alt="card38"  id="card38" onclick="makeSelection('card38')" style="border: 0px"/>
+       <img src="pictures/cards/52/card39.jpg" alt="card39"  id="card39" onclick="makeSelection('card39')" style="border: 0px"/>
+       <img src="pictures/cards/52/card40.jpg" alt="card40"  id="card40" onclick="makeSelection('card40')" style="border: 0px"/>
+       <img src="pictures/cards/52/card41.jpg" alt="card41"  id="card41" onclick="makeSelection('card41')" style="border: 0px"/>
+       <img src="pictures/cards/52/card42.jpg" alt="card42"  id="card42" onclick="makeSelection('card42')" style="border: 0px"/>
+       <img src="pictures/cards/52/card43.jpg" alt="card43"  id="card43" onclick="makeSelection('card43')" style="border: 0px"/>
+       <img src="pictures/cards/52/card44.jpg" alt="card44"  id="card44" onclick="makeSelection('card44')" style="border: 0px"/>
+       <img src="pictures/cards/52/card45.jpg" alt="card45"  id="card45" onclick="makeSelection('card45')" style="border: 0px"/>
+       <img src="pictures/cards/52/card46.jpg" alt="card46"  id="card46" onclick="makeSelection('card46')" style="border: 0px"/>
+       <img src="pictures/cards/52/card47.jpg" alt="card47"  id="card47" onclick="makeSelection('card47')" style="border: 0px"/>
+       <img src="pictures/cards/52/card48.jpg" alt="card48"  id="card48" onclick="makeSelection('card48')" style="border: 0px"/>
+       <img src="pictures/cards/52/card49.jpg" alt="card49"  id="card49" onclick="makeSelection('card49')" style="border: 0px"/>
+       <img src="pictures/cards/52/card50.jpg" alt="card50"  id="card50" onclick="makeSelection('card50')" style="border: 0px"/>
+       <img src="pictures/cards/52/card51.jpg" alt="card51"  id="card51" onclick="makeSelection('card51')" style="border: 0px"/>
+    </div>
+
+    <audio id="backgroundAudio">
+      <source src="sounds/background.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio><br>
+
+<button onclick="mute()" type="button" id="muteButton">Mute</button>
+
+<script charset="utf-8" src="js/sounds.js"> </script>
+<script charset="utf-8" src="js/cards.js"> </script>
+<script charset="utf-8" src="js/selection.js"> </script>
 </body>
 </html>
