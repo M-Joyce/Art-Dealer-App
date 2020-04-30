@@ -564,14 +564,5 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
     }
 }
 
-// Set global sum for 'sum of number' pattern
-let totalSum = Math.floor((Math.random() * 20) + 5 );
 
-// Set random pattern number on load
-let randomPattern = Math.random() * 100 % 10;
-randomPattern = Number(randomPattern.toFixed());
 
-randomPattern = 4;
-totalSum = 11;
-returnedCards = matchPatterns(randomPattern, [cards[19], cards[50], cards[6], cards[29]], totalSum)
-console.log(returnedCards);
