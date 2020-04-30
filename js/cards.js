@@ -558,8 +558,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
             }
         default:
             {
-                console.log('cards.js: Invalid pattern number.');
-                console.log(patternNumber)
+                console.log('cards.js: Invalid pattern number: ' + patternNumber);
             }      
     }
 }

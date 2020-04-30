@@ -145,13 +145,15 @@ function startNewRound() {
         randomPattern = Number(randomPattern.toFixed());
     }
     else if (document.title == "6-8 Game") {
-        randomPattern = Math.random() * 100 % 8;
+        randomPattern = Math.random() * 100 % 7;
         randomPattern = Number(randomPattern.toFixed()) + 4;
         totalSum = Math.floor((Math.random() * 20) + 5 );
     }
     else{
         console.log(document.title);
     }
+    let message = document.getElementById("message");
+    message.innerHTML = "";
 }
 
 // Function for submission of cards
@@ -192,18 +194,19 @@ function submitSelections() {
         if (returnedCards != null) {
             // Start new round if all four cards matches our pattern
             if (returnedCards.length == 4) {
-                for (let j = 0; j < allSelections.length; j++ ){
-                    allSelections[j].style.border = "2px solid yellow"
-                }
-                alert("Buyer has brough all your cards!");
-                console.log("Starting new round");
                 clearSelections();
                 currentRound++;
                 if (currentRound < totalRounds) {
+                    alert("Buyer has brough all your cards!");
+                    console.log("Starting new round");
                     startNewRound();
                 }
                 else{
-
+                    if (currentRound == 1) 
+                        alert("Congratulations! You've completed all " + currentRound + " round!");
+                    else
+                        alert("Congratulations! You've completed all " + currentRound + " rounds!");
+                    location.replace("./GameOverMenu.html");
                 }
             }
             // Highlight cards that were brought
@@ -220,17 +223,23 @@ function submitSelections() {
                     }
                 }
                 let message = document.getElementById("message");
-                message.innerHTML = returnedCards.length + " cards were brought by the buyer.";
+                if (returnedCards.length == 1)
+                    message.innerHTML = "Buyer brought " + returnedCards.length + " card.";
+                else
+                    message.innerHTML = "Buyer brought " + returnedCards.length + " cards.";
             }
         }
         else{
             let message = document.getElementById("message");
             message.innerHTML = "No cards were brought by the buyer. Try again.";
+            for (let i = 0; i < allSelections.length; i++ ){
+                allSelections[i].style.border = "0px none";
+            }
         }
     }
 }
 
 startNewRound();
 
-// totalRounds = getArgument('rounds');
-// console.log("Total rounds are " + totalRounds);
+totalRounds = getArgument('rounds');
+console.log("Total rounds are " + totalRounds);

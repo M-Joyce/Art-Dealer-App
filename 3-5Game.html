@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>3-5 Game</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="buyer-table">
@@ -70,6 +75,14 @@
        <img src="pictures/cards/52/card51.jpg" alt="card51"  id="card51" onclick="makeSelection('card51')" style="border: 0px"/>
     </div>
 
+    <audio id="backgroundAudio">
+      <source src="sounds/background.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio><br>
+
+<button onclick="mute()" type="button" id="muteButton">Mute</button>
+
+<script charset="utf-8" src="js/sounds.js"> </script>
 <script charset="utf-8" src="js/cards.js"> </script>
 <script charset="utf-8" src="js/selection.js"> </script>
 </body>
