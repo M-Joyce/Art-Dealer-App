@@ -1,7 +1,14 @@
+/*
+ *  Author: Khanh Vong
+ *  Project: ArtDealerGame/GameUI
+ *  Description: UI for ArtDealerApp game play. Process card selections and submissions.
+ */
+
 var count = 0;
 var currentRound = 0;
 var totalRounds;
 
+// Get augument passed from href
 function getArgument(argName) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -10,7 +17,7 @@ function getArgument(argName) {
 
 // Perform when a card at the seller's table is clicked
 function makeSelection(cardId) {
-    // Get card clicked
+    // Get card that was clicked on
     let cardChoice = document.getElementById(cardId);
 
     // Get all choices given to dealer so far
@@ -55,8 +62,7 @@ function makeSelection(cardId) {
             selectedCardChoice.alt = cardId;
             selectedCardChoice.src = cardChoice.src;
         }
-        else{
-            // Remove a card on the buyer's table
+        else{ // Remove a card on the buyer's table
             
             // Erase box around removed card on the seller's table
             document.getElementById(allSelections[count].alt).style.border = "0px none";
@@ -64,6 +70,7 @@ function makeSelection(cardId) {
             // Add new card
             allSelections[count].alt = cardId;
             allSelections[count].src = cardChoice.src;
+            allSelections[count].style.border = "0px none";
 
             // Move to next index for next removal should that be the case again
             count++;
@@ -71,8 +78,7 @@ function makeSelection(cardId) {
         }
 
     }
-    else{
-        // Take the card back if card is already on the seller's table
+    else{ // Take the card back if card is already on the seller's table
         
         // Erase box on seller's table
         cardChoice.style.border = "0px none";
@@ -147,7 +153,7 @@ function startNewRound() {
     else if (document.title == "6-8 Game") {
         randomPattern = Math.random() * 100 % 7;
         randomPattern = Number(randomPattern.toFixed()) + 4;
-        totalSum = Math.floor((Math.random() * 20) + 5 );
+        totalSum = Math.floor((Math.random() * 20) + 10 );
     }
     else{
         console.log(document.title);
@@ -194,14 +200,19 @@ function submitSelections() {
         if (returnedCards != null) {
             // Start new round if all four cards matches our pattern
             if (returnedCards.length == 4) {
+                // Reset UI and increment round
                 clearSelections();
                 currentRound++;
+
+                // Check if all rounds are finished
                 if (currentRound < totalRounds) {
-                    alert("Buyer has brough all your cards!");
+                    alert("Buyer has brought all your cards!");
                     console.log("Starting new round");
                     startNewRound();
                 }
+                // One game is finished, move on to end game screen
                 else{
+                    // Print verbally correct messages
                     if (currentRound == 1) 
                         alert("Congratulations! You've completed all " + currentRound + " round!");
                     else
@@ -209,7 +220,7 @@ function submitSelections() {
                     location.replace("./GameOverMenu.html");
                 }
             }
-            // Highlight cards that were brought
+            // Highlight cards brought by buyer
             else if (returnedCards.length > 0) {
                 for (let i = 0; i < returnedCards.length; i++ ){
                     let card = returnedCards[i];
@@ -239,7 +250,9 @@ function submitSelections() {
     }
 }
 
+// On page load start the round
 startNewRound();
 
+// Set round number of rounds to play
 totalRounds = getArgument('rounds');
 console.log("Total rounds are " + totalRounds);

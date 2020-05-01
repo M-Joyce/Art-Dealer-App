@@ -1,0 +1,31 @@
+######################################################################
+Data Structure:
+######################################################################
+
+- cards = [
+{number: 1, color: 'black', suit: 'spade', index: 0},
+                        ...
+{number: 13, color: 'black', suit: 'club', index: 51}];
+
+
+######################################################################
+Functions:
+######################################################################
+
+- function cardNumberLookUp(number, cardChoices): Find a card number in list of cards.
+    - number: Number() datatype to find in cardChoice.
+    - cardChoices: Array of card object.
+    - return: card object, or null.
+
+- function cardInList(card, cardList): Find a card object in a list of cards.
+    - card: single card object.
+    - cardList: Array of card object.
+    - return: true or false.
+
+- function matchPatterns(patternNumber, cardChoices, totalSum): Given a patternNumber, determind if cardChoices list contains the pattern. Variable totalSum is for subset sum pattern.
+    - patternNumber: Set the number of pattern we wish for cardChoices to match.
+    - cardChoices: Array of card objects.
+    - totalSum: Sum that all cards from cardChoices must add up to. Variable is only used when the pattern is summation.
+    - return: Array of card objects that from cardChoices, that matches patern. Return value is null if no card from cardChoices matches a pattern.
+
+######################################################################
