@@ -1,3 +1,9 @@
+/*
+ *  Author: Khanh Vong
+ *  Description: Create cards data-structure, and algorithm to handle different patterns.
+ *
+ */
+
 // Create a deck of 52 cards
 const cards = [
      {number: 1,  color: 'black' , suit: 'spade', index: 0}, 
@@ -140,19 +146,26 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 console.log('Pattern: Same Suits');
                 console.log(cardChoices);
 
+                // Create a way to store all possible patterns
                 let cardList = [[]]
                 let index = 0;
-                // Return identical suitk
+
+                // Return identical suit matches
                 for (let i = 0; i < cardChoices.length; i++){
                     currentCard = cardChoices[i];
                     for (let j = 0; j < cardChoices.length; j++){
+                        // Don't compare the card with itself
                         if (i != j){
+                            // If pattern is found add it to the list
                             if (currentCard.suit == cardChoices[j].suit) {
+                                
+                                // If the first add then add both cards to the list
                                 if (cardList[index].length == 0) {
                                     cardList[index].push(currentCard);
                                     cardList[index].push(cardChoices[j]);
                                     currentCard = cardChoices[j];
                                 }
+                                // Otherwise add one card
                                 else{
                                     cardList[index].push(cardChoices[j]);
                                     currentCard = cardChoices[j];
@@ -163,12 +176,15 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     cardList.push([]);
                     index++;
                 }
-                console.log('matches');
+                console.log('All matches:');
                 console.log(cardList);
 
+                // Look through matches in cardList
                 if (cardList.length > 0) {
                     let max = 0;
                     let maxIndex = 0;
+
+                    // Find the matches with the most cards
                     for (let i = 0; i < cardList.length; i++ ){
                         if (cardList[i].length > 0) {
                             max = cardList[i].length;
@@ -191,6 +207,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 console.log(cardChoices);
 
                 // Removing duplicates from cardList
+                // Using remove duplicate algorithm
                 let nonDuplicates = [];
                 let mark = [];
                 for (let i = 0; i < cardChoices.length; i++){
@@ -210,6 +227,8 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                         nonDuplicates.push(cardChoices[i]);
                     }
                 }
+
+                // Return if exist
                 if (nonDuplicates.length > 0)
                     return nonDuplicates;
                 else
@@ -448,20 +467,31 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
 
                 let allReturnPossible = [];
                 let index = 0;
+
+                // Compate colors
                 for (let i = 0; i < cardChoices.length; i++ ){
+                    // Account for out of range index
                     let compareIndex = (i + 2) % cardChoices.length;
+                    // If colors are in the correct positions
                     if (cardChoices[i].color == cardChoices[compareIndex].color) {
+                        
+                        // Continue to the neighboring position
                         let ajacentIndex = (i + 1) % cardChoices.length;
                         let ajacentCompareIndex = (ajacentIndex + 2) % cardChoices.length;
                         allReturnPossible.push([]);
+
+                        // Check if the color is different AND the same color in the +2 index
                         if (cardChoices[ajacentIndex].color == cardChoices[ajacentCompareIndex].color 
                             && cardChoices[i].color != cardChoices[ajacentIndex].color) {
+
+                            // Add all four cards into return array
                             allReturnPossible[index].push(cardChoices[i]);
                             allReturnPossible[index].push(cardChoices[compareIndex]);
                             allReturnPossible[index].push(cardChoices[ajacentIndex]);
                             allReturnPossible[index].push(cardChoices[ajacentCompareIndex]);
                             break;
                         }
+                        // Add the two cards that matches and in correct position
                         allReturnPossible[index].push(cardChoices[i]);
                         allReturnPossible[index].push(cardChoices[compareIndex]);
                         index++;
@@ -469,6 +499,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
 
                 }
 
+                // Return setting with the most cards
                 let mostCardsIndex = 0;
                 let mostCards = 0;
                 if (allReturnPossible != 0) {
@@ -504,7 +535,6 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 
                 console.log(cardChoices);
                 let returnCards = [];
-                let possibleReturns = [];
                 console.log('random number');
                 console.log(totalSum);
                 
