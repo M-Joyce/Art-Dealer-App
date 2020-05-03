@@ -88,7 +88,7 @@ function makeSelection(cardId) {
             // Remove the card and open up the slot
             if (allSelections[i].alt == cardId) {
                 allSelections[i].alt = "choice";
-                allSelections[i].src = "blank";
+                allSelections[i].src = "pictures/cards/blank.png";
                 allSelections[i].style.border = "0px none";
                 break;
             }
@@ -108,7 +108,7 @@ function clearCard(slotId) {
 
     // Clearing slot
     slot.alt = "choice";
-    slot.src = "blank";
+    slot.src = "pictures/cards/blank.png";
     slot.style.border = "0px none";
 }
 
@@ -133,7 +133,7 @@ function clearSelections() {
 
             // Set slots on buyer's to indicate empty slots
             allSelections[i].alt = "choice";
-            allSelections[i].src = "blank";
+            allSelections[i].src = "pictures/cards/blank.png";
             allSelections[i].style.border = "0px none";
         }
     }
