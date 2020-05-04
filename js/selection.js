@@ -256,7 +256,7 @@ function submitSelections() {
 
                 // Check if all rounds are finished
                 if (currentRound < totalRounds) {
-                    alert("Buyer has brought all your cards!");
+                    alert(pattern + "\nBuyer has brought all your cards!");
                     console.log("Starting new round");
                     startNewRound();
                 }
@@ -264,9 +264,9 @@ function submitSelections() {
                 else{
                     // Print verbally correct messages
                     if (currentRound == 1) 
-                        alert("Congratulations! You've completed all " + currentRound + " round!");
+                        alert(pattern + "\nCongratulations! You've completed all " + currentRound + " round!");
                     else
-                        alert("Congratulations! You've completed all " + currentRound + " rounds!");
+                        alert(pattern + "\nCongratulations! You've completed all " + currentRound + " rounds!");
                     location.replace("./GameOverMenu.html");
                 }
             }
