@@ -4,18 +4,37 @@
  *
  */
 
-// Create a deck of 52 cards
+// Create a deck of 16 cards
 const cards = [
-     {number: 1,  color: 'black' , suit: 'spade', index: 0}, 
-     {number: 2,  color: 'black' , suit: 'spade', index: 1},
-     {number: 3,  color: 'black' , suit: 'spade', index: 2},
-     {number: 4,  color: 'black' , suit: 'spade', index: 3},
-     {number: 5,  color: 'black' , suit: 'spade', index: 4},
-     {number: 6,  color: 'black' , suit: 'spade', index: 5},
-     {number: 7,  color: 'black' , suit: 'spade', index: 6},
-     {number: 8,  color: 'black' , suit: 'spade', index: 7},
-     {number: 9,  color: 'black' , suit: 'spade', index: 8},
-     {number: 10, color: 'black' , suit: 'spade', index: 9},
+    [// K-2 Cards
+    {suit: 'circle'    ,   color: 'black'  , index: 0 },
+    {suit: 'square'    ,   color: 'black'  , index: 1 },
+    {suit: 'star'      ,   color: 'black'  , index: 2 },
+    {suit: 'triangle'  ,   color: 'black'  , index: 3 },
+    {suit: 'circle'    ,   color: 'blue'   , index: 4 },
+    {suit: 'square'    ,   color: 'blue'   , index: 5 },
+    {suit: 'star'      ,   color: 'blue'   , index: 6 },
+    {suit: 'triangle'  ,   color: 'blue'   , index: 7 },
+    {suit: 'circle'    ,   color: 'red'    , index: 8 },
+    {suit: 'square'    ,   color: 'red'    , index: 9 },
+    {suit: 'star'      ,   color: 'red'    , index: 10},
+    {suit: 'triangle'  ,   color: 'red'    , index: 11},
+    {suit: 'circle'    ,   color: 'yellow' , index: 12},
+    {suit: 'square'    ,   color: 'yellow' , index: 13},
+    {suit: 'star'      ,   color: 'yellow' , index: 15},
+    {suit: 'triangle'  ,   color: 'yellow' , index: 15}],
+
+    [// 3-5 and 6-8 Cards  
+    {number: 1,  color: 'black' , suit: 'spade', index: 0}, 
+    {number: 2,  color: 'black' , suit: 'spade', index: 1},
+    {number: 3,  color: 'black' , suit: 'spade', index: 2},
+    {number: 4,  color: 'black' , suit: 'spade', index: 3},
+    {number: 5,  color: 'black' , suit: 'spade', index: 4},
+    {number: 6,  color: 'black' , suit: 'spade', index: 5},
+    {number: 7,  color: 'black' , suit: 'spade', index: 6},
+    {number: 8,  color: 'black' , suit: 'spade', index: 7},
+    {number: 9,  color: 'black' , suit: 'spade', index: 8},
+    {number: 10, color: 'black' , suit: 'spade', index: 9},
     {number: 11, color: 'black' , suit: 'spade', index: 10},
     {number: 12, color: 'black' , suit: 'spade', index: 11},
     {number: 13, color: 'black' , suit: 'spade', index: 12},
@@ -34,34 +53,34 @@ const cards = [
     {number: 12, color: 'red' , suit: 'diamond', index: 24},
     {number: 13, color: 'red' , suit: 'diamond', index: 25},
 
-      {number: 1,  color: 'red' , suit: 'heart', index: 26},   
-      {number: 2,  color: 'red' , suit: 'heart', index: 27},
-      {number: 3,  color: 'red' , suit: 'heart', index: 28},
-      {number: 4,  color: 'red' , suit: 'heart', index: 29},
-      {number: 5,  color: 'red' , suit: 'heart', index: 30},
-      {number: 6,  color: 'red' , suit: 'heart', index: 31},
-      {number: 7,  color: 'red' , suit: 'heart', index: 32},
-      {number: 8,  color: 'red' , suit: 'heart', index: 33},
-      {number: 9,  color: 'red' , suit: 'heart', index: 34},
-      {number: 10, color: 'red' , suit: 'heart', index: 35},
-      {number: 11, color: 'red' , suit: 'heart', index: 36},
-      {number: 12, color: 'red' , suit: 'heart', index: 37},
-      {number: 13, color: 'red' , suit: 'heart', index: 38},
+    {number: 1,  color: 'red' , suit: 'heart',   index: 26},   
+    {number: 2,  color: 'red' , suit: 'heart',   index: 27},
+    {number: 3,  color: 'red' , suit: 'heart',   index: 28},
+    {number: 4,  color: 'red' , suit: 'heart',   index: 29},
+    {number: 5,  color: 'red' , suit: 'heart',   index: 30},
+    {number: 6,  color: 'red' , suit: 'heart',   index: 31},
+    {number: 7,  color: 'red' , suit: 'heart',   index: 32},
+    {number: 8,  color: 'red' , suit: 'heart',   index: 33},
+    {number: 9,  color: 'red' , suit: 'heart',   index: 34},
+    {number: 10, color: 'red' , suit: 'heart',   index: 35},
+    {number: 11, color: 'red' , suit: 'heart',   index: 36},
+    {number: 12, color: 'red' , suit: 'heart',   index: 37},
+    {number: 13, color: 'red' , suit: 'heart',   index: 38},
 
-      {number: 1,  color: 'black' , suit: 'club', index: 39}, 
-      {number: 2,  color: 'black' , suit: 'club', index: 40},
-      {number: 3,  color: 'black' , suit: 'club', index: 41},
-      {number: 4,  color: 'black' , suit: 'club', index: 42},
-      {number: 5,  color: 'black' , suit: 'club', index: 43},
-      {number: 6,  color: 'black' , suit: 'club', index: 44},
-      {number: 7,  color: 'black' , suit: 'club', index: 45},
-      {number: 8,  color: 'black' , suit: 'club', index: 46},
-      {number: 9,  color: 'black' , suit: 'club', index: 47},
-      {number: 10, color: 'black' , suit: 'club', index: 48},
-      {number: 11, color: 'black' , suit: 'club', index: 49},
-      {number: 12, color: 'black' , suit: 'club', index: 50},
-      {number: 13, color: 'black' , suit: 'club', index: 51}
-];                                                    
+    {number: 1,  color: 'black' , suit: 'club',  index: 39}, 
+    {number: 2,  color: 'black' , suit: 'club',  index: 40},
+    {number: 3,  color: 'black' , suit: 'club',  index: 41},
+    {number: 4,  color: 'black' , suit: 'club',  index: 42},
+    {number: 5,  color: 'black' , suit: 'club',  index: 43},
+    {number: 6,  color: 'black' , suit: 'club',  index: 44},
+    {number: 7,  color: 'black' , suit: 'club',  index: 45},
+    {number: 8,  color: 'black' , suit: 'club',  index: 46},
+    {number: 9,  color: 'black' , suit: 'club',  index: 47},
+    {number: 10, color: 'black' , suit: 'club',  index: 48},
+    {number: 11, color: 'black' , suit: 'club',  index: 49},
+    {number: 12, color: 'black' , suit: 'club',  index: 50},
+    {number: 13, color: 'black' , suit: 'club',  index: 51}
+]];
 
 // Return a card from a list of choices given its number 
 function cardNumberLookup(number, cardChoices){
@@ -85,9 +104,199 @@ function cardInCardList(card, cardList){
 }
 
 // Function to match pattern with choices
-function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9], cards[12]], totalSum = 10){
+function matchPatterns(patternNumber, cardChoices = [cards[1][1], cards[1][5], cards[1][9], cards[1][12]], totalSum = 10){
     switch(patternNumber){
         case 0:
+            // Different color
+            console.log('Pattern: Different colors');
+            console.log(cardChoices);
+
+            // Removing duplicates from cardList
+            // Using remove duplicate algorithm
+            let nonDuplicates = [];
+            let mark = [];
+            for (let i = 0; i < cardChoices.length; i++){
+                mark.push(true);
+            }
+            for (let i = 0; i < cardChoices.length; i++){
+                if (mark[i] == true) {
+                    for (let j = i + 1; j < cardChoices.length; j++){
+                        if (cardChoices[j].color == cardChoices[i].color) {
+                            mark[j] = false;
+                        }
+                    }
+                }
+            }       
+            for (let i = 0; i < cardChoices.length; i++){
+                if (mark[i] == true) {
+                    nonDuplicates.push(cardChoices[i]);
+                }
+            }
+
+            // Return if exist
+            if (nonDuplicates.length > 0)
+                return nonDuplicates;
+            else
+                return null;
+            break;
+        case 1:
+            {
+            // Same color
+            console.log('Pattern: Same Color');
+            console.log(cardChoices);
+
+            // Create a way to store all possible patterns
+            let cardList = [[]]
+            let index = 0;
+
+            // Return identical suit matches
+            for (let i = 0; i < cardChoices.length; i++){
+                currentCard = cardChoices[i];
+                for (let j = 0; j < cardChoices.length; j++){
+                    // Don't compare the card with itself
+                    if (i != j){
+                        // If pattern is found add it to the list
+                        if (currentCard.color == cardChoices[j].color) {
+                            
+                            // If the first add then add both cards to the list
+                            if (cardList[index].length == 0) {
+                                cardList[index].push(currentCard);
+                                cardList[index].push(cardChoices[j]);
+                                currentCard = cardChoices[j];
+                            }
+                            // Otherwise add one card
+                            else{
+                                cardList[index].push(cardChoices[j]);
+                                currentCard = cardChoices[j];
+                            }
+                        }
+                    }
+                }
+                cardList.push([]);
+                index++;
+            }
+            console.log('All matches:');
+            console.log(cardList);
+
+            // Look through matches in cardList
+            if (cardList.length > 0) {
+                let max = 0;
+                let maxIndex = 0;
+
+                // Find the matches with the most cards
+                for (let i = 0; i < cardList.length; i++ ){
+                    if (cardList[i].length > 0) {
+                        max = cardList[i].length;
+                        maxIndex = i;
+                    }
+                }
+                if (max == 0)
+                    return null;
+                else
+                    return cardList[maxIndex]
+            }
+            else
+                return null;
+
+            break;
+            }
+        case 2:
+            {
+            // Different suits
+            console.log('Pattern: Different Suits');
+            console.log(cardChoices);
+
+            // Removing duplicates from cardList
+            // Using remove duplicate algorithm
+            let nonDuplicates = [];
+            let mark = [];
+            for (let i = 0; i < cardChoices.length; i++){
+                mark.push(true);
+            }
+            for (let i = 0; i < cardChoices.length; i++){
+                if (mark[i] == true) {
+                    for (let j = i + 1; j < cardChoices.length; j++){
+                        if (cardChoices[j].suit == cardChoices[i].suit) {
+                            mark[j] = false;
+                        }
+                    }
+                }
+            }       
+            for (let i = 0; i < cardChoices.length; i++){
+                if (mark[i] == true) {
+                    nonDuplicates.push(cardChoices[i]);
+                }
+            }
+
+            // Return if exist
+            if (nonDuplicates.length > 0)
+                return nonDuplicates;
+            else
+                return null;
+                
+            }
+            break;
+        case 3:
+            {
+            // Same suits
+            console.log('Pattern: Same Suits');
+            console.log(cardChoices);
+
+            // Create a way to store all possible patterns
+            let cardList = [[]]
+            let index = 0;
+
+            // Return identical suit matches
+            for (let i = 0; i < cardChoices.length; i++){
+                currentCard = cardChoices[i];
+                for (let j = 0; j < cardChoices.length; j++){
+                    // Don't compare the card with itself
+                    if (i != j){
+                        // If pattern is found add it to the list
+                        if (currentCard.suit == cardChoices[j].suit) {
+                            
+                            // If the first add then add both cards to the list
+                            if (cardList[index].length == 0) {
+                                cardList[index].push(currentCard);
+                                cardList[index].push(cardChoices[j]);
+                                currentCard = cardChoices[j];
+                            }
+                            // Otherwise add one card
+                            else{
+                                cardList[index].push(cardChoices[j]);
+                                currentCard = cardChoices[j];
+                            }
+                        }
+                    }
+                }
+                cardList.push([]);
+                index++;
+            }
+            console.log('All matches:');
+            console.log(cardList);
+
+            // Look through matches in cardList
+            if (cardList.length > 0) {
+                let max = 0;
+                let maxIndex = 0;
+
+                // Find the matches with the most cards
+                for (let i = 0; i < cardList.length; i++ ){
+                    if (cardList[i].length > 0) {
+                        max = cardList[i].length;
+                        maxIndex = i;
+                    }
+                }
+                if (max == 0)
+                    return null;
+                else
+                    return cardList[maxIndex]
+            }
+            else
+                return null;
+            }
+            break;
+        case 4:
             {
                 // High cards
                 console.log('Pattern: High cards');
@@ -104,7 +313,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 1:
+        case 5:
             {
                 // Odds
                 console.log('Pattern: Odds');
@@ -122,7 +331,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 2:
+        case 6:
             {
                 // Evens
                 console.log('Pattern: Even');
@@ -139,104 +348,105 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 else
                     return returnCards;
                 break;
-            }
-        case 3:
+            }        
+        case 7:
             {
-                // Same suits
-                console.log('Pattern: Same Suits');
-                console.log(cardChoices);
+            // Same suits
+            console.log('Pattern: Same Suits');
+            console.log(cardChoices);
 
-                // Create a way to store all possible patterns
-                let cardList = [[]]
-                let index = 0;
+            // Create a way to store all possible patterns
+            let cardList = [[]]
+            let index = 0;
 
-                // Return identical suit matches
-                for (let i = 0; i < cardChoices.length; i++){
-                    currentCard = cardChoices[i];
-                    for (let j = 0; j < cardChoices.length; j++){
-                        // Don't compare the card with itself
-                        if (i != j){
-                            // If pattern is found add it to the list
-                            if (currentCard.suit == cardChoices[j].suit) {
-                                
-                                // If the first add then add both cards to the list
-                                if (cardList[index].length == 0) {
-                                    cardList[index].push(currentCard);
-                                    cardList[index].push(cardChoices[j]);
-                                    currentCard = cardChoices[j];
-                                }
-                                // Otherwise add one card
-                                else{
-                                    cardList[index].push(cardChoices[j]);
-                                    currentCard = cardChoices[j];
-                                }
+            // Return identical suit matches
+            for (let i = 0; i < cardChoices.length; i++){
+                currentCard = cardChoices[i];
+                for (let j = 0; j < cardChoices.length; j++){
+                    // Don't compare the card with itself
+                    if (i != j){
+                        // If pattern is found add it to the list
+                        if (currentCard.suit == cardChoices[j].suit) {
+                            
+                            // If the first add then add both cards to the list
+                            if (cardList[index].length == 0) {
+                                cardList[index].push(currentCard);
+                                cardList[index].push(cardChoices[j]);
+                                currentCard = cardChoices[j];
+                            }
+                            // Otherwise add one card
+                            else{
+                                cardList[index].push(cardChoices[j]);
+                                currentCard = cardChoices[j];
                             }
                         }
                     }
-                    cardList.push([]);
-                    index++;
                 }
-                console.log('All matches:');
-                console.log(cardList);
+                cardList.push([]);
+                index++;
+            }
+            console.log('All matches:');
+            console.log(cardList);
 
-                // Look through matches in cardList
-                if (cardList.length > 0) {
-                    let max = 0;
-                    let maxIndex = 0;
+            // Look through matches in cardList
+            if (cardList.length > 0) {
+                let max = 0;
+                let maxIndex = 0;
 
-                    // Find the matches with the most cards
-                    for (let i = 0; i < cardList.length; i++ ){
-                        if (cardList[i].length > 0) {
-                            max = cardList[i].length;
-                            maxIndex = i;
-                        }
+                // Find the matches with the most cards
+                for (let i = 0; i < cardList.length; i++ ){
+                    if (cardList[i].length > 0) {
+                        max = cardList[i].length;
+                        maxIndex = i;
                     }
-                    if (max == 0)
-                        return null;
-                    else
-                        return cardList[maxIndex]
                 }
-                else
+                if (max == 0)
                     return null;
+                else
+                    return cardList[maxIndex]
+            }
+            else
+                return null;
             }
             break;
-        case 4:
+        case 8:
             {
-                // Different suits
-                console.log('Pattern: Different Suits');
-                console.log(cardChoices);
+            // Different suits
+            console.log('Pattern: Different Suits');
+            console.log(cardChoices);
 
-                // Removing duplicates from cardList
-                // Using remove duplicate algorithm
-                let nonDuplicates = [];
-                let mark = [];
-                for (let i = 0; i < cardChoices.length; i++){
-                    mark.push(true);
-                }
-                for (let i = 0; i < cardChoices.length; i++){
-                    if (mark[i] == true) {
-                        for (let j = i + 1; j < cardChoices.length; j++){
-                            if (cardChoices[j].suit == cardChoices[i].suit) {
-                                mark[j] = false;
-                            }
+            // Removing duplicates from cardList
+            // Using remove duplicate algorithm
+            let nonDuplicates = [];
+            let mark = [];
+            for (let i = 0; i < cardChoices.length; i++){
+                mark.push(true);
+            }
+            for (let i = 0; i < cardChoices.length; i++){
+                if (mark[i] == true) {
+                    for (let j = i + 1; j < cardChoices.length; j++){
+                        if (cardChoices[j].suit == cardChoices[i].suit) {
+                            mark[j] = false;
                         }
                     }
-                }       
-                for (let i = 0; i < cardChoices.length; i++){
-                    if (mark[i] == true) {
-                        nonDuplicates.push(cardChoices[i]);
-                    }
                 }
+            }       
+            for (let i = 0; i < cardChoices.length; i++){
+                if (mark[i] == true) {
+                    nonDuplicates.push(cardChoices[i]);
+                }
+            }
 
-                // Return if exist
-                if (nonDuplicates.length > 0)
-                    return nonDuplicates;
-                else
-                    return null;
-                    
+            // Return if exist
+            if (nonDuplicates.length > 0)
+                return nonDuplicates;
+            else
+                return null;
+                
             }
             break;
-        case 5:
+
+        case 9:
             {
                 // Check for straight
                 console.log('Pattern: Straight');
@@ -317,7 +527,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 6:
+        case 10:
             {
                 // Four of a kind
                 console.log('Pattern: Four of a kind');
@@ -380,7 +590,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return null;
                 break;
             }
-        case 7:
+        case 11:
             {
                 // Two Pairs
                 console.log('Pattern: Two Pairs');
@@ -416,7 +626,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 8:
+        case 12:
             {
                 // Primes
                 console.log('Pattern: Primes');
@@ -436,7 +646,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                 console.log('Pattern number is 1');
                 break;
             }
-        case 9:
+        case 13:
             {
                 // Palindrome
                 console.log('Pattern: Palindrome');
@@ -458,7 +668,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break;
             }
-        case 10:
+        case 14:
             {
                 // Checker
                 console.log('Pattern: Checker');
@@ -520,7 +730,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1], cards[5], cards[9
                     return returnCards;
                 break
             }
-        case 11:
+        case 15:
             {
                 // Sum to a number (given in argument)
                 console.log('Subset sum');

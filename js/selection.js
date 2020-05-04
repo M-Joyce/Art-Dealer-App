@@ -146,18 +146,23 @@ let totalSum = 0;
 let randomPattern = 0;
 // Start a new round by changing buying pattern
 function startNewRound() {
-    if (document.title == "3-5 Game") {
-        randomPattern = Math.random() * 100 % 7;
+    // Select from pattern with respect to game level
+    if (document.title == "K-2 Game") {
+        randomPattern = Math.random() * 100 % 3;
+        randomPattern = Number(randomPattern.toFixed());
+    }else if (document.title == "3-5 Game") {
+        randomPattern = Math.random() * 100 % 7 + 4;
         randomPattern = Number(randomPattern.toFixed());
     }
     else if (document.title == "6-8 Game") {
-        randomPattern = Math.random() * 100 % 7;
-        randomPattern = Number(randomPattern.toFixed()) + 4;
+        randomPattern = Math.random() * 100 % 8 + 7;
+        randomPattern = Number(randomPattern.toFixed());
         totalSum = Math.floor((Math.random() * 20) + 10 );
     }
     else{
         console.log(document.title);
     }
+    console.log(randomPattern);
     let message = document.getElementById("message");
     message.innerHTML = "";
 }
@@ -194,7 +199,14 @@ function submitSelections() {
         }
 
         // Check Pattern
-        let returnedCards = matchPatterns(randomPattern, [cards[cardIndexes[0]], cards[cardIndexes[1]], cards[cardIndexes[2]], cards[cardIndexes[3]]], totalSum);
+        let returnCards;
+        if (document.title == "K-2 Game") {
+            returnedCards = matchPatterns(randomPattern, [cards[0][cardIndexes[0]], cards[0][cardIndexes[1]], cards[0][cardIndexes[2]], cards[0][cardIndexes[3]]], totalSum);
+        }
+        else{
+            returnedCards = matchPatterns(randomPattern, [cards[1][cardIndexes[0]], cards[1][cardIndexes[1]], cards[1][cardIndexes[2]], cards[1][cardIndexes[3]]], totalSum);
+        }
+        
         console.log(returnedCards);
 
         if (returnedCards != null) {
@@ -203,6 +215,8 @@ function submitSelections() {
                 // Reset UI and increment round
                 clearSelections();
                 currentRound++;
+
+                document.getElementById("roundCounter").innerHTML = currentRound + "/" + totalRounds
 
                 // Check if all rounds are finished
                 if (currentRound < totalRounds) {
@@ -222,6 +236,9 @@ function submitSelections() {
             }
             // Highlight cards brought by buyer
             else if (returnedCards.length > 0) {
+                for (let i = 0; i < allSelections.length; i++ ){
+                    allSelections[i].style.border = "0px none";
+                }
                 for (let i = 0; i < returnedCards.length; i++ ){
                     let card = returnedCards[i];
                     for (let j = 0; j < allSelections.length; j++ ){
