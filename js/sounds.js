@@ -39,3 +39,27 @@ function playSound(audioId, volume){
 
 }
 
+
+var instructionsAudio = document.getElementById("instructionsAudio");
+instructionsAudio.loop = false;
+instructionsAudio.volume = 1;
+instructionsAudio.play();
+
+function listenAgain(){
+    instructionsAudio.play();
+}
+
+function muteInstructions(){
+    // Get properties from mute button
+    var muteButton = document.getElementById("muteInstructionsButton");
+    if (muteButton.innerHTML === "Mute Instructions") {
+        muteButton.innerHTML = "Unmute Instructions";
+        instructionsAudio.volume = 0;
+        // Add any other sound to mute here
+    } else {
+        muteButton.innerHTML = "Mute Instructions";
+        instructionsAudio.volume = 1; 
+        // Add any other sound to unmute here
+    }
+}
+
