@@ -8,6 +8,42 @@ var count = 0;
 var currentRound = 0;
 var totalRounds;
 
+// Shuffling around elements
+function shuffleCards(){
+    let randomIndex;
+    let allCards = document.getElementsByClassName("cards");
+
+    // Swap cards with random card for all cards
+    for (let i = 0; i < allCards.length; i++ ){
+        randomIndex = Math.random() * (allCards.length - 1);
+        randomIndex = randomIndex.toFixed();
+
+        let randomSrc = allCards[randomIndex].src;
+        let randomAlt = allCards[randomIndex].alt;
+        let randomId = allCards[randomIndex].id;
+        let randomOnclick = allCards[randomIndex].getAttribute('onclick');
+        let randomStyle = allCards[randomIndex].style.border;
+
+        let currentSrc = allCards[i].src;
+        let currentAlt = allCards[i].alt;
+        let currentId = allCards[i].id;
+        let currentOnclick = allCards[i].getAttribute('onclick');
+        let currentStyle = allCards[i].style.border;
+
+        allCards[randomIndex].src = currentSrc;
+        allCards[randomIndex].alt = currentAlt;
+        allCards[randomIndex].id = currentId;
+        allCards[randomIndex].setAttribute("onclick", currentOnclick)
+        allCards[randomIndex].style.border = currentStyle;
+
+        allCards[i].src = randomSrc;
+        allCards[i].alt = randomAlt;
+        allCards[i].id = randomId;
+        allCards[i].setAttribute("onclick", randomOnclick);
+        allCards[i].style.border = randomStyle;
+    }
+}
+
 // Get augument passed from href
 function getArgument(argName) {
     const queryString = window.location.search;
@@ -266,6 +302,8 @@ function submitSelections() {
         }
     }
 }
+
+shuffleCards();
 
 // On page load start the round
 startNewRound();
