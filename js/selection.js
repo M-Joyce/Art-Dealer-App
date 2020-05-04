@@ -22,21 +22,25 @@ function shuffleCards(){
         let randomAlt = allCards[randomIndex].alt;
         let randomId = allCards[randomIndex].id;
         let randomOnclick = allCards[randomIndex].getAttribute('onclick');
+        let randomStyle = allCards[randomIndex].style.border;
 
         let currentSrc = allCards[i].src;
         let currentAlt = allCards[i].alt;
         let currentId = allCards[i].id;
         let currentOnclick = allCards[i].getAttribute('onclick');
+        let currentStyle = allCards[i].style.border;
 
         allCards[randomIndex].src = currentSrc;
         allCards[randomIndex].alt = currentAlt;
         allCards[randomIndex].id = currentId;
         allCards[randomIndex].setAttribute("onclick", currentOnclick)
+        allCards[randomIndex].style.border = currentStyle;
 
         allCards[i].src = randomSrc;
         allCards[i].alt = randomAlt;
         allCards[i].id = randomId;
         allCards[i].setAttribute("onclick", randomOnclick);
+        allCards[i].style.border = randomStyle;
     }
 }
 
