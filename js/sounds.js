@@ -7,7 +7,7 @@
 // Play background automatically on load
 var backgroundAudio = document.getElementById("backgroundAudio");
 backgroundAudio.loop = true;
-backgroundAudio.volume = 0.75;
+backgroundAudio.volume = 0.60;
 backgroundAudio.play();
 
 // Mute function to mute any outgoing volume
@@ -20,7 +20,7 @@ function mute() {
         // Add any other sound to mute here
     } else {
         muteButton.innerHTML = "Mute";
-        backgroundAudio.volume = 0.75; 
+        backgroundAudio.volume = 0.60; 
         // Add any other sound to unmute here
     }
 } 
