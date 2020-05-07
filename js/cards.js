@@ -23,7 +23,7 @@ const cards = [
     {suit: 'triangle'  ,   color: 'red'    , index: 11},
     {suit: 'circle'    ,   color: 'yellow' , index: 12},
     {suit: 'square'    ,   color: 'yellow' , index: 13},
-    {suit: 'star'      ,   color: 'yellow' , index: 15},
+    {suit: 'star'      ,   color: 'yellow' , index: 14},
     {suit: 'triangle'  ,   color: 'yellow' , index: 15}],
 
     [// 3-5 and 6-8 Cards  
