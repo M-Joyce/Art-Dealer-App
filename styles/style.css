@@ -136,6 +136,27 @@ body {
   color: white;
 }
 
+#horizontal-scrollbar{
+	height:520px; 
+	overflow:auto; 
+	white-space:nowrap
+}
+
+#horizontal-scrollbar::-webkit-scrollbar{
+	width:15px;
+}
+
+#horizontal-scrollbar::-webkit-scrollbar-thumb {
+	background-color: #ab91ba; 
+	border: 2px solid black;
+	display: inline-block;
+}
+#horizontal-scrollbar::-webkit-corner {
+	color: #ab91ba; 
+	border: 2px solid black;
+}
+	
+
 .instructionsDiv {
   position: absolute;
   bottom: 0.3%;
