@@ -256,7 +256,7 @@ function submitSelections() {
 
                 // Check if all rounds are finished
                 if (currentRound < totalRounds) {
-                    alert(pattern + "\nBuyer has brought all your cards!");
+                    alert(pattern + "\nBuyer has bought all your cards!");
                     console.log("Starting new round");
                     startNewRound();
                 }
@@ -270,7 +270,7 @@ function submitSelections() {
                     location.replace("./GameOverMenu.html");
                 }
             }
-            // Highlight cards brought by buyer
+            // Highlight cards bought by buyer
             else if (returnedCards.length > 0) {
                 for (let i = 0; i < allSelections.length; i++ ){
                     allSelections[i].style.border = "0px none";
@@ -288,14 +288,14 @@ function submitSelections() {
                 }
                 let message = document.getElementById("message");
                 if (returnedCards.length == 1)
-                    message.innerHTML = "Buyer brought " + returnedCards.length + " card.";
+                    message.innerHTML = "Buyer bought " + returnedCards.length + " card.";
                 else
-                    message.innerHTML = "Buyer brought " + returnedCards.length + " cards.";
+                    message.innerHTML = "Buyer bought " + returnedCards.length + " cards.";
             }
         }
         else{
             let message = document.getElementById("message");
-            message.innerHTML = "No cards were brought by the buyer. Try again.";
+            message.innerHTML = "No cards were bought by the buyer. Try again.";
             for (let i = 0; i < allSelections.length; i++ ){
                 allSelections[i].style.border = "0px none";
             }
