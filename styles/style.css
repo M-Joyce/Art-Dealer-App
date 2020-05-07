@@ -169,3 +169,16 @@ body {
 .textInstructions{
   text-align: center;
 }
+
+.instructionsPageTitle{
+  font-size: 22pt;
+  text-align: center;
+}
+
+.instructionsBody{
+  text-align: center;
+}
+
+.stepByStep{
+  text-align: center;
+}
