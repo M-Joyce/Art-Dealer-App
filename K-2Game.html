@@ -15,11 +15,13 @@
         <img src="pictures/cards/blank.png" alt="choice" id="choice1" onclick="clearCard('choice1')"/>
         <img src="pictures/cards/blank.png" alt="choice" id="choice2" onclick="clearCard('choice2')"/>
         <img src="pictures/cards/blank.png" alt="choice" id="choice3" onclick="clearCard('choice3')"/>
-        <button onclick="submitSelections()">Submit</button>
-        <button onclick="clearSelections()">Clear</button>
-        <button onclick="shuffleCards()">Shuffle</button>
+        <br>
         <label>Round: </label>
         <span id="roundCounter">0</span>
+        <br>
+        <button class="basicButton" onclick="submitSelections()">Submit</button>
+        <button class="basicButton" onclick="clearSelections()">Clear</button>
+        <button class="basicButton" onclick="shuffleCards()">Shuffle</button>
         <p id="message"></p>
     </div>
 
@@ -43,7 +45,7 @@
      <img class="cards" src="pictures/cards/16/card12.jpg"  alt="card12"  id="card12" onclick="makeSelection('card12')" style="border: 0px" height="150" width="115"/>
      <img class="cards" src="pictures/cards/16/card13.jpg"  alt="card13"  id="card13" onclick="makeSelection('card13')" style="border: 0px" height="150" width="115"/>
      <img class="cards" src="pictures/cards/16/card14.jpg"  alt="card14"  id="card14" onclick="makeSelection('card14')" style="border: 0px" height="150" width="115"/>
-     <img class="cards" src="pictures/cards/16/card15.jpg"  alt="card15"  id="card15" onclick="makeSelection('card15')" style="border: 0px" height="150" width="115""/>
+     <img class="cards" src="pictures/cards/16/card15.jpg"  alt="card15"  id="card15" onclick="makeSelection('card15')" style="border: 0px" height="150" width="115"/>
    </div>
 
     <audio id="backgroundAudio">
@@ -51,7 +53,6 @@
       Your browser does not support the audio element.
     </audio><br>
 
-	<button onclick="mute()" type="button" id="muteButton">Mute</button>
 
 	<div class="textInstructions">
         <audio id="instructionsAudio">
@@ -64,7 +65,8 @@
         Keep in mind that the Art Dealer is looking for patterns of cards. For example, all red cards, or cards that are even numbers.<br>
         The patterns that the Dealer is looking for will get harder with each round, and with each age range. Have fun!<br></p>
 
-        <button id="muteInstructionsButton" onclick="muteInstructions()">Mute Instructions</button> <button id="listenAgain" onclick="listenAgain()">Listen to Instructions Again</button>
+        <button class="basicButton" onclick="mute()" type="button" id="muteButton">Mute Background</button>
+        <button class="basicButton" id="muteInstructionsButton" onclick="muteInstructions()">Mute Instructions</button> <button class="basicButton" id="listenAgain" onclick="listenAgain()">Listen to Instructions Again</button>
     </div>
 
 	<script charset="utf-8" src="js/sounds.js"> </script>

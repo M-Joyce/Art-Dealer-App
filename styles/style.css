@@ -184,3 +184,35 @@ body {
   text-align: center;
   font-size: 14pt;	
 }
+
+.basicButton {
+   background: #AA75C9;
+   background-image: -webkit-linear-gradient(top, #AA75C9, #AA75C9);
+   background-image: -moz-linear-gradient(top, #AA75C9, #AA75C9);
+   background-image: -ms-linear-gradient(top, #AA75C9, #AA75C9);
+   background-image: -o-linear-gradient(top, #AA75C9, #AA75C9);
+   background-image: linear-gradient(to bottom, #AA75C9, #AA75C9);
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   font-family: 'Quicksand', sans-serif;
+   transition-duration: 0.4s;
+   color: #FFFFFF;
+   font-size: 20px;
+   font-weight: 100;
+   padding: 15px;
+   border: solid #AA75C9 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.basicButton:hover {
+   background: #7F40A3;
+   border: solid #7F40A3 1px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   text-decoration: none;
+}
