@@ -650,7 +650,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1][1], cards[1][5], c
                 for (let i = 0; i < cardChoices.length; i++) {
                     number = cardChoices[i].number;
                     if (number == 2 || number == 3 || number == 5 || 
-                        number == 7 || number == 11 || number == 13) {
+                        number == 7) {
                         returnCards.push(cardChoices[i]);
                     }
                 }
