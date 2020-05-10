@@ -10,7 +10,7 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="buyer-table">
+    <div class="buyer-table" align="center">
         <img src="pictures/cards/blank.png" alt="choice" id="choice0" onclick="clearCard('choice0')"/>
         <img src="pictures/cards/blank.png" alt="choice" id="choice1" onclick="clearCard('choice1')"/>
         <img src="pictures/cards/blank.png" alt="choice" id="choice2" onclick="clearCard('choice2')"/>
@@ -19,14 +19,10 @@
         <label>Round: </label>
         <span id="roundCounter">0</span>
         <br>
-       
-     <p id="message"></p>
-    </div>
-	
-    <div class="buyer-table" align ="center">
-    	<button class="basicButton" onclick="submitSelections()">Submit</button>
+        <button class="basicButton" onclick="submitSelections()">Submit</button>
         <button class="basicButton" onclick="clearSelections()">Clear</button>
         <button class="basicButton" onclick="shuffleCards()">Shuffle</button>
+        <p id="message"></p>
     </div>
 	
     <div class="seller-table" id="horizontal-scrollbar">
