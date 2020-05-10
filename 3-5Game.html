@@ -19,12 +19,16 @@
         <label>Round: </label>
         <span id="roundCounter">0</span>
         <br>
-        <button class="basicButton" onclick="submitSelections()">Submit</button>
+       
+     <p id="message"></p>
+    </div>
+	
+    <div class="buyer-table" align ="center">
+    	<button class="basicButton" onclick="submitSelections()">Submit</button>
         <button class="basicButton" onclick="clearSelections()">Clear</button>
         <button class="basicButton" onclick="shuffleCards()">Shuffle</button>
-        <p id="message"></p>
     </div>
-
+	
     <div class="seller-table" id="horizontal-scrollbar">
 		<div class ="top-row">
 		   <img class="cards" src="pictures/cards/52/card0.jpg"  alt="card0"   id="card0"  onclick="makeSelection('card0')"  style="border: 0px"/>
