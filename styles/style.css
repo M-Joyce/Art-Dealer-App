@@ -140,7 +140,7 @@ body {
 }
 
 #horizontal-scrollbar{
-	height:520px; 
+	height:330px; 
 	overflow:auto; 
 	white-space:nowrap
 }
