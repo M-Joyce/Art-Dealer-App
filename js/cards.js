@@ -305,7 +305,7 @@ function matchPatterns(patternNumber, cardChoices = [cards[1][1], cards[1][5], c
         case 4:
             {
                 // High cards
-                pattern = "Patterh: High Cards";
+                pattern = "Pattern: High Cards";
                 console.log(pattern);
                 console.log(cardChoices);
                 returnCards = [];
