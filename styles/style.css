@@ -226,4 +226,7 @@ body {
 		width: 115px;
 		height:150px;
 }
-	
+
+.instructionsImg{
+   border-style: solid;	
+}
