@@ -14,12 +14,12 @@ backgroundAudio.play();
 function mute() { 
     // Get properties from mute button
     var muteButton = document.getElementById("muteButton");
-    if (muteButton.innerHTML === "Mute") {
-        muteButton.innerHTML = "Unmute";
+    if (muteButton.innerHTML === "Mute Background") {
+        muteButton.innerHTML = "Unmute Background";
         backgroundAudio.volume = 0;
         // Add any other sound to mute here
     } else {
-        muteButton.innerHTML = "Mute";
+        muteButton.innerHTML = "Mute Background";
         backgroundAudio.volume = 0.60; 
         // Add any other sound to unmute here
     }
