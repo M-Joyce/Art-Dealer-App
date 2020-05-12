@@ -230,3 +230,29 @@ body {
 .instructionsImg{
    border-style: solid;	
 }
+
+
+.credits{
+   background: rgba(170, 117, 201, .5);
+  position: absolute;
+  bottom: 2.5%;
+  left: 15%;
+  text-align: center;
+  font-size: 32px;
+  margin: auto;
+  border: solid #7F40A3 2px;
+  width: 70%;
+}
+
+.credits label{
+  font-weight: bold;
+  padding: auto;
+}
+
+.teamMembers{
+    padding: 10px;
+}
+
+.teamMembers span{
+    padding: 15px;
+}
